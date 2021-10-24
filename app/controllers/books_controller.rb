@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
   def index
-    @profile_images=@user.proile_images
-    @book =Book.new
-    @books =Book.all
+   @user =current_user
+   @book =Book.new
+   @books =Book.all
   end
 
   def create
