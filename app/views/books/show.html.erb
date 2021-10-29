@@ -9,9 +9,11 @@
         <td>
          <% if @book.user == current_user %>
          <%= link_to "Edit",edit_book_path(@book),class: 'btn btn-sm btn-success edit_book_26880' %>
-         <%= link_to "Destroy",book_path(@book.id),method: :delete,"data-confirm" => "本当に消しますか？",class: 'btn btn-sm btn-danger destroy_book_26880' %>
+         <%= link_to "Destroy",book_path(@book),method: :delete,"data-confirm" => "本当に消しますか？",class: 'btn btn-sm btn-danger destroy_book_26880' %>
          <% end %>
         </td>
       </tbody>
      </table>
     </div>
+   </div>
+ </main>
