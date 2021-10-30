@@ -12,18 +12,15 @@
   </thead>
   <tbody>
       <tr>
-        <td><img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg"></td>
-        <td>Olivia</td>
-        <td><a class="user_34418" href="/users/34418">Show</a></td>
-      </tr>
-      <tr>
-        <td><img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg"></td>
-        <td>サンプルタロウ</td>
-        <td><a class="user_34419" href="/users/34419">Show</a></td>
-      </tr>
-      <tr>
-        
+        <% @users.each do |user| %>
+        <div>
+        <tr><td><%=attachment_image_tag user, :profile_image, :fill,60,60,fallback: "no_image.jpg"%>
+        <td><%= user.name %></td>
+        <td><%= link_to "show",user_path(user.id)  %></td></tr>
+        </div>
+      </tbody>
+        <% end %>
+
   </tbody>
 </table>
-
     </div>
