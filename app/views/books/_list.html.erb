@@ -1,9 +1,11 @@
 <main>
  <p id="notice"></p>
  <% if @book.errors.any? %>
-  <%= @book.errors.count %>Error!
+ <div class="alert alert-danger">
+  <%= @book.errors.count %>Error!</div>
   <% @book.errors.full_messages.each do |message| %>
-    <%= message %>
+    <div class="alert alert-danger">
+    <%= message %></div>
   <% end %>
 <% end %>
  <div class='container px-5 px-sm-0'>
@@ -29,7 +31,7 @@
     </div>
 
     <h2 class="mt-3">New book</h2>
-    <%= form_with model:@book,local:true do |f| %>
+    <%= form_with model:Book.new,local:true do |f| %>
     <div class="form-group">
      <label for="book_title">Title</label>
      <br><%= f.text_field :title %>
