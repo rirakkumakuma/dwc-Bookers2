@@ -1,37 +1,37 @@
 <main>
  <p id="notice"></p>
- <% if @book.errors.any? %>
+ <% if book.errors.any? %>
  <div class="alert alert-danger">
-  <%= @book.errors.count %>Error!</div>
-  <% @book.errors.full_messages.each do |message| %>
-    <div class="alert alert-danger">
-    <%= message %></div>
+  <%= book.errors.count %>Error!</div>
+  <% book.errors.full_messages.each do |message| %>
+ <div class="alert alert-danger">
+  <%= message %></div>
   <% end %>
-<% end %>
+  <% end %>
  <div class='container px-5 px-sm-0'>
   <div class="row">
    <div class="col-md-3">
     <h2>User info</h2>
-    <tr><%= attachment_image_tag @user, :profile_image, :fill,60,60,fallback: "no_image.jpg"%></tr>
+    <tr><%= attachment_image_tag user, :profile_image, :fill,60,60,fallback: "no_image.jpg"%></tr>
      <table class="table">
       <tbody>
         <tr></tr>
         <tr>
           <th>name</th>
-          <th><%= @user.name %></th>
+          <th><%= user.name %></th>
         </tr>
         <tr>
          <th>introduction</th>
-         <th><%= @user.introduction %></th>
+         <th><%= user.introduction %></th>
         </tr>
       </tbody>
      </table>
     <div class="row">
-     <%= link_to "",edit_user_path(current_user.id),class: 'btn btn-outline-secondary btn-block fas fa-user-cog'%>
+     <%= link_to "",edit_user_path(user.id),class: 'btn btn-outline-secondary btn-block fas fa-user-cog'%>
     </div>
 
     <h2 class="mt-3">New book</h2>
-    <%= form_with model:Book.new,local:true do |f| %>
+    <%= form_with model:book,local:true do |f| %>
     <div class="form-group">
      <label for="book_title">Title</label>
      <br><%= f.text_field :title %>

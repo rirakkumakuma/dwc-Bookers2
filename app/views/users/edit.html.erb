@@ -2,7 +2,7 @@
  <p id="notice"></p>
  <% if @user.errors.any? %>
   <div class="alert alert-danger">
-   <%= @user.errors.count %>Error!</div>
+   <%= @user.errors.count %>error!</div>
   <% @user.errors.full_messages.each do |message| %>
   <div class="alert alert-danger">
    <%= message %></div>
